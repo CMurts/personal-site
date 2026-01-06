@@ -13,12 +13,17 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       margin: 0;
       padding: 2em;
       animation: fadeIn 1s ease-in;
       text-align: left;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 920px;
     }
 
     @keyframes fadeIn {
@@ -32,10 +37,21 @@
       color: #111;
     }
 
+    h2 {
+      font-size: 1.4em;
+      margin: 0 0 0.5em 0;
+      color: #111;
+    }
+
     p {
       margin: 0.2em 0;
       font-size: 1em;
       color: #333;
+    }
+
+    .intro {
+      margin-top: 0.5em;
+      line-height: 1.35;
     }
 
     .spaced {
@@ -46,6 +62,14 @@
       font-weight: bold;
     }
 
+    .company {
+      color: #888;
+    }
+
+    .section {
+      margin-top: 2.5em;
+    }
+
     hr {
       width: 50px;
       border: none;
@@ -54,7 +78,6 @@
     }
 
     a {
-      margin-top: 0.5em;
       font-size: 1em;
       color: #000;
       text-decoration: underline;
@@ -62,6 +85,61 @@
 
     a:hover {
       color: #555;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25em;
+      margin-top: 1em;
+    }
+
+    .project-card {
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 1em;
+      background: #fff;
+      transition: border-color 120ms ease, transform 120ms ease;
+    }
+
+    .project-card:hover {
+      border-color: #cfcfcf;
+      transform: translateY(-1px);
+    }
+
+    .project-title {
+      font-weight: bold;
+      margin: 0;
+      color: #111;
+    }
+
+    .project-meta {
+      margin-top: 0.35em;
+      color: #444;
+      line-height: 1.35;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      margin-top: 0.7em;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.15em 0.5em;
+      border: 1px solid #e6e6e6;
+      border-radius: 999px;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .project-links {
+      margin-top: 0.9em;
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 600px) {
@@ -72,19 +150,146 @@
         font-size: 1em;
       }
     }
-      .company {
-      color: #888;
-    }
 
 </style>
 </head>
 <body>
-  <h1>Colin Murtagh</h1>
-  <p>Brand and Product Marketing.<br><br><strong>Current</strong><br><span class="company">Lightspark</span><br><br><strong>Past</strong><br><span class="company">Expedia</span><br><span class="company">Facebook (Meta)</span><br><span class="company">Twitter</span><br><span class="company">72andSunny</span></p>
-  <br><br>Los Angeles
-  <hr>
-  <p class="bold">Contact</p>
-  <p><a href="mailto:colin.m.murtagh@gmail.com">Send me an email</a></p>
-  <a href="https://www.linkedin.com/in/comurtagh/" target="_blank">Connect on LinkedIn</a>
+  <div class="container">
+    <h1>Colin Murtagh</h1>
+    <p class="intro">
+      Brand and Product Marketing.<br><br>
+      <strong>Current</strong><br><span class="company">Lightspark</span><br><br>
+      <strong>Past</strong><br>
+      <span class="company">Expedia</span><br>
+      <span class="company">Facebook (Meta)</span><br>
+      <span class="company">Twitter</span><br>
+      <span class="company">72andSunny</span>
+    </p>
+
+    <p class="section">Los Angeles</p>
+
+    <hr>
+
+    <section id="portfolio" class="section" aria-labelledby="portfolio-heading">
+      <h2 id="portfolio-heading">Selected work</h2>
+      <p>
+        A quick overview of video-led and integrated marketing campaigns I’ve worked on.
+        If you’d like deeper case studies (strategy, process, results), I’m happy to share more.
+      </p>
+
+      <div class="portfolio-grid">
+        <!-- Replace these cards with your real projects. Keep titles outcome-focused. -->
+        <article class="project-card">
+          <p class="project-title">Campaign / Launch: Project Name</p>
+          <p class="project-meta">
+            Role: Positioning + creative direction.<br>
+            Outcome: One-line impact (e.g., “Drove X, improved Y, launched Z”).
+          </p>
+          <div class="tag-row">
+            <span class="tag">Video</span>
+            <span class="tag">Integrated</span>
+            <span class="tag">Paid + Organic</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Watch</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">More</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-title">Integrated consumer campaign: Project Name</p>
+          <p class="project-meta">
+            Role: Go-to-market + partner management.<br>
+            Outcome: One-line impact (or “Highlights available on request”).
+          </p>
+          <div class="tag-row">
+            <span class="tag">Consumer</span>
+            <span class="tag">Social</span>
+            <span class="tag">Retail / OOH</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Video</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Press</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-title">Product narrative: Project Name</p>
+          <p class="project-meta">
+            Role: Messaging + launch planning.<br>
+            Outcome: One-line impact (e.g., “Clarified value prop across channels”).
+          </p>
+          <div class="tag-row">
+            <span class="tag">Product marketing</span>
+            <span class="tag">Creative</span>
+            <span class="tag">Lifecycle</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Overview</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Assets</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-title">Brand campaign: Project Name</p>
+          <p class="project-meta">
+            Role: Briefing + production oversight.<br>
+            Outcome: One-line impact (e.g., “Scaled creative for multiple markets”).
+          </p>
+          <div class="tag-row">
+            <span class="tag">Brand</span>
+            <span class="tag">Video</span>
+            <span class="tag">Global</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Watch</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Credits</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-title">Integrated moment: Project Name</p>
+          <p class="project-meta">
+            Role: Creative strategy + channel planning.<br>
+            Outcome: One-line impact (e.g., “Increased consideration among X audience”).
+          </p>
+          <div class="tag-row">
+            <span class="tag">Integrated</span>
+            <span class="tag">Partnerships</span>
+            <span class="tag">Social</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Video</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Recap</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-title">Campaign: Project Name</p>
+          <p class="project-meta">
+            Role: End-to-end marketing.<br>
+            Outcome: One-line impact (or “Results available upon request”).
+          </p>
+          <div class="tag-row">
+            <span class="tag">Video</span>
+            <span class="tag">Launch</span>
+            <span class="tag">CRM</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Watch</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Notes</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <p id="contact-heading" class="bold">Contact</p>
+      <p><a href="mailto:colin.m.murtagh@gmail.com">Send me an email</a></p>
+      <p><a href="https://www.linkedin.com/in/comurtagh/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
+    </section>
+  </div>
 </body>
 </html>
