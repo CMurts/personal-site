@@ -1,0 +1,33 @@
+{
+  "portfolio": [
+    {
+      "id": 1,
+      "title": "Facebook Groups",
+      "type": "video",
+      "description": "Highlighting that people can come together around their interests.",
+      "youtubeId": "1UQcE9yDyYI",
+      "youtubeUrl": "https://www.youtube.com/watch?v=1UQcE9yDyYI",
+      "company": "Facebook"
+    },
+    {
+      "id": 2,
+      "title": "Campaign Name",
+      "type": "campaign",
+      "description": "Description of the integrated marketing campaign, including strategy, channels, and impact.",
+      "externalLink": "https://example.com/campaign",
+      "year": "2023",
+      "company": "Expedia",
+      "imageUrl": "https://example.com/campaign-image.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Another Video Project",
+      "type": "video",
+      "description": "Another example video project description.",
+      "youtubeId": "VIDEO_ID",
+      "youtubeUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+      "year": "2023",
+      "company": "Meta"
+    }
+  ]
+}

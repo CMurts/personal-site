@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Work - Colin Murtagh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Courier Prime', monospace;
+      background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 2em;
+      animation: fadeIn 1s ease-in;
+      min-height: 100vh;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      margin-bottom: 2em;
+      display: inline-block;
+    }
+
+    .back-link a {
+      color: #000;
+      text-decoration: underline;
+      font-size: 1em;
+    }
+
+    .back-link a:hover {
+      color: #555;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 0.2em;
+      color: #111;
+    }
+
+    p {
+      margin: 0.2em 0;
+      font-size: 1em;
+      color: #333;
+    }
+
+    hr {
+      width: 50px;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2em 0 1em 0;
+    }
+
+    /* Portfolio Styles */
+    .portfolio-section {
+      margin-top: 2em;
+      width: 100%;
+    }
+
+    .portfolio-intro {
+      margin-bottom: 2em;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      margin-top: 2em;
+    }
+
+    .portfolio-item {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      opacity: 0.7;
+    }
+
+    .portfolio-item .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      margin-bottom: 1em;
+    }
+
+    .portfolio-item .company {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-item .product {
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 0.5em;
+    }
+
+    .portfolio-item .campaign-name {
+      font-size: 1.2em;
+      margin: 0.5em 0 0 0;
+      color: #111;
+      font-weight: normal;
+    }
+
+    @media (max-width: 900px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+    <h1>Select Work</h1>
+    
+    <div class="portfolio-section">
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Portfolio items - 3 columns x 1 row = 3 campaigns -->
+        
+        <a href="campaign-1.html" class="portfolio-item">
+          <img src="images/facebook-groups-hero.jpg" alt="Groups" class="hero-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23f5f5f5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Courier Prime, monospace%22 font-size=%2214%22 fill=%22%23999%22%3EFacebook Groups Hero Image%3C/text%3E%3C/svg%3E';">
+          <div class="company">Meta</div>
+          <div class="product">Facebook App</div>
+          <h3 class="campaign-name">More Together</h3>
+        </a>
+
+        <a href="campaign-2.html" class="portfolio-item">
+          <img src="images/facebook-brand-hero.jpg" alt="Hopes" class="hero-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23f5f5f5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Courier Prime, monospace%22 font-size=%2214%22 fill=%22%23999%22%3EFacebook Brand Hero Image%3C/text%3E%3C/svg%3E';">
+          <div class="company">Meta</div>
+          <div class="product">Facebook App</div>
+          <h3 class="campaign-name">Hopes</h3>
+        </a>
+
+        <a href="campaign-3.html" class="portfolio-item">
+          <img src="images/one-key-hero.jpg" alt="One Key" class="hero-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23f5f5f5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Courier Prime, monospace%22 font-size=%2214%22 fill=%22%23999%22%3EOne Key Hero Image%3C/text%3E%3C/svg%3E';">
+          <div class="company">Expedia Group</div>
+          <div class="product">Expedia, Hotels.com, Vrbo</div>
+          <h3 class="campaign-name">One Key</h3>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
