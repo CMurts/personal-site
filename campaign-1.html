@@ -215,16 +215,6 @@
       margin: 0;
     }
 
-    .campaign-media .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5em;
-      margin-bottom: 2em;
-    }
-
-    .campaign-media .video-grid .video-item {
-      margin-bottom: 0;
-    }
 
     .campaign-media .image-grid {
       display: grid;
@@ -268,7 +258,6 @@
     }
 
     @media (max-width: 600px) {
-      .campaign-media .video-grid,
       .campaign-media .image-grid {
         grid-template-columns: 1fr;
       }
@@ -327,7 +316,6 @@
               <img src="https://img.youtube.com/vi/1UQcE9yDyYI/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/1UQcE9yDyYI/hqdefault.jpg'">
               <div class="play-button"></div>
               <video class="video-player" controls>
-                <source src="videos/dads.mov" type="video/quicktime">
                 <source src="videos/dads.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -337,8 +325,8 @@
           </div>
         </div>
 
-        <!-- 2x2 Grid of Videos -->
-        <div class="video-grid">
+        <!-- Videos - Full Width -->
+        <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/dogs.mp4" onclick="playVideo(this)">
               <img src="images/dogs-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
@@ -351,6 +339,9 @@
             <h3 class="video-title">Facebook Group: Nothing Better Than A Basset</h3>
             <p class="video-description">Agency: WK Portland<br>Music: Patsy Cline - "Back in Baby's Arms"</p>
           </div>
+        </div>
+
+        <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/expat.mp4" onclick="playVideo(this)">
               <img src="images/expat-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
@@ -363,6 +354,9 @@
             <h3 class="video-title">Facebook Group: Expats in Korea</h3>
             <p class="video-description">Agency: WK Amsterdam</p>
           </div>
+        </div>
+
+        <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/military.mp4" onclick="playVideo(this)">
               <img src="images/military-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
@@ -375,6 +369,9 @@
             <h3 class="video-title">Facebook Group: Military Mama Network</h3>
             <p class="video-description">Agency: WK Portland<br>Director: Frederik Bond</p>
           </div>
+        </div>
+
+        <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/memphis.mp4" onclick="playVideo(this)">
               <img src="images/memphis-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
