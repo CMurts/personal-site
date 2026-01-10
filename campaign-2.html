@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hopes - Facebook App - Colin Murtagh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Courier Prime', monospace;
+      background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 2em;
+      animation: fadeIn 1s ease-in;
+      min-height: 100vh;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      margin-bottom: 2em;
+      display: inline-block;
+    }
+
+    .back-link a {
+      color: #888;
+      text-decoration: underline;
+      font-size: 1em;
+    }
+
+    .back-link a:hover {
+      color: #555;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 0.2em;
+      color: #111;
+    }
+
+    .campaign-header {
+      margin-bottom: 3em;
+    }
+
+    .campaign-header .company {
+      font-size: 0.9em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 0.3em;
+    }
+
+    .campaign-header .product {
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 0.5em;
+    }
+
+    hr {
+      width: 50px;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2em 0 1em 0;
+    }
+
+    .campaign-section {
+      margin-bottom: 4em;
+    }
+
+    .campaign-section h2 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      color: #111;
+    }
+
+    .campaign-section .overview {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 1.5em;
+      max-width: 800px;
+    }
+
+    .campaign-section .overview p {
+      margin: 0 0 1em 0;
+    }
+
+    .campaign-media {
+      margin: 2em 0;
+    }
+
+    .campaign-media .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 1em;
+      cursor: pointer;
+      background: #000;
+    }
+
+    .campaign-media .video-container .video-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .campaign-media .video-container .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 48px;
+      background: rgba(23, 35, 34, 0.9);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 1;
+    }
+
+    .campaign-media .video-container:hover .play-button {
+      background: rgba(255, 0, 0, 0.9);
+    }
+
+    .campaign-media .video-container .play-button::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 20px solid #fff;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .campaign-media .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+    }
+
+    .campaign-media .video-container.playing video {
+      display: block;
+    }
+
+    .campaign-media .video-container.playing .video-thumbnail,
+    .campaign-media .video-container.playing .play-button {
+      display: none;
+    }
+
+    .campaign-media .hero-video {
+      margin-bottom: 2em;
+    }
+
+    .campaign-media .video-item {
+      margin-bottom: 2em;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="portfolio.html">← Back to Select Work</a>
+    </div>
+
+    <div class="campaign-header">
+      <div class="company">Meta</div>
+      <div class="product">Facebook App</div>
+      <h1>Hopes</h1>
+    </div>
+
+    <hr>
+
+    <div class="campaign-section">
+      <h2>Hopes</h2>
+      <div class="overview">
+        <p>To bring more optimism into the News Feed, we asked thousands of people around the world what they were hopeful for in the year ahead. From their answers, we surfaced shared themes and created a suite of content that highlighted the positive, unifying threads running through our global community. We capped it off with a 60-second film directed by Gus Van Sant, which premiered during the Golden Globes and featured Tarana Burke, who started the MeToo movement.</p>
+      </div>
+      <div class="campaign-media">
+        <div class="hero-video">
+          <div class="video-item">
+            <div class="video-container" data-video-src="videos/hopes.mp4" onclick="playVideo(this)">
+              <img src="images/facebook-brand-hero.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <div class="play-button"></div>
+              <video class="video-player" controls>
+                <source src="videos/hopes.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function playVideo(container) {
+      const videoSrc = container.getAttribute('data-video-src');
+      if (videoSrc) {
+        container.classList.add('playing');
+        const video = container.querySelector('video');
+        if (video) {
+          video.play();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
