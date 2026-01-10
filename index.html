@@ -93,6 +93,45 @@
       color: #888;
     }
 
+    .contact-section {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .contact-label {
+      display: inline-block;
+    }
+
+    .contact-email {
+      display: none;
+    }
+
+    .contact-section:hover .contact-label {
+      display: none;
+    }
+
+    .contact-section:hover .contact-email {
+      display: inline-block;
+      color: #555;
+    }
+
+    .contact-section:active {
+      opacity: 0.7;
+    }
+
+    .copy-feedback {
+      position: absolute;
+      font-size: 0.8em;
+      color: #888;
+      margin-left: 0.5em;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .contact-section.copied .copy-feedback {
+      opacity: 1;
+    }
+
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -128,14 +167,31 @@
       <p class="bold">Work</p>
       <p><a href="./portfolio.html">View Work →</a></p>
       <hr>
-      <p class="bold">Contact</p>
-      <p><a href="mailto:colin.m.murtagh@gmail.com">Send me an email</a></p>
-      <a href="https://www.linkedin.com/in/comurtagh/" target="_blank">Connect on LinkedIn</a>
+      <p class="bold contact-section" id="contactSection" onclick="copyEmail()">
+        <span class="contact-label">Contact</span>
+        <span class="contact-email">colin.m.murtagh@gmail.com</span>
+        <span class="copy-feedback">Copied!</span>
+      </p>
     </div>
     <div class="image-container">
       <!-- Add your image: Save as images/image.jpg -->
       <img src="images/image.jpg" alt="Image" id="main-image">
     </div>
   </div>
+
+  <script>
+    function copyEmail() {
+      const email = 'colin.m.murtagh@gmail.com';
+      navigator.clipboard.writeText(email).then(function() {
+        const contactSection = document.getElementById('contactSection');
+        contactSection.classList.add('copied');
+        setTimeout(function() {
+          contactSection.classList.remove('copied');
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Failed to copy email:', err);
+      });
+    }
+  </script>
 </body>
 </html>

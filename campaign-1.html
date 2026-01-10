@@ -208,6 +208,13 @@
       font-weight: normal;
     }
 
+    .campaign-media .video-item .video-story {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.5;
+      margin: 0.3em 0 0.5em 0;
+    }
+
     .campaign-media .video-item .video-description {
       font-size: 0.9em;
       color: #666;
@@ -221,6 +228,10 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5em;
       margin-top: 2em;
+    }
+
+    .campaign-media .image-grid.three-columns {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .campaign-media .image-container {
@@ -261,6 +272,10 @@
       .campaign-media .image-grid {
         grid-template-columns: 1fr;
       }
+      
+      .campaign-media .image-grid.three-columns {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 600px) {
@@ -292,7 +307,6 @@
       <h2>Let's find more that brings us together</h2>
       <div class="overview">
         <p>As Facebook faced one of the most scrutinized moments in its history, we launched an integrated campaign to shift the narrative—reminding people of the platform's original promise: to bring people closer. In a time of division, we leaned into real stories of unlikely connections, everyday communities, and shared moments that couldn't happen anywhere else.</p>
-        <p>The campaign had to thread a narrow needle—resonating in a hyper-political climate while staying rooted in the product's core value. This strategic clarity gave us the flexibility to scale the approach globally, adapting the work for key markets including Brazil, Germany, India, and the UK.</p>
         
         <h4>Background</h4>
         <p>Facebook was no longer the golden child. Public perception had shifted, and for the first time, the brand needed to actively define what it stood for—and reclaim its own story.</p>
@@ -301,10 +315,7 @@
         <p>To talk about what brings us together, we had to acknowledge what pulls us apart. But on Facebook, those moments of friction often played out on the platform itself—making it both the message and the medium. That meant walking a fine line, with a narrow window of what we could credibly say.</p>
         
         <h4>Insight</h4>
-        <p>Focus on preferences, not polarizing worldviews. People can debate whether New York or deep dish is superior—but we can all agree that pizza brings us joy.</p>
-        
-        <h4>Tagline</h4>
-        <p>Let's find more that brings us together.</p>
+        <p>Focus on preferences, not polarizing worldviews. People can debate whether New York style or deep dish is superior, but we can all agree that pizza brings us joy.</p>
       </div>
       <div class="campaign-media">
         <h3 class="media-header">Film</h3>
@@ -320,6 +331,7 @@
               </video>
             </div>
             <h3 class="video-title">Facebook Group: Dads with Daughters</h3>
+            <p class="video-story">Dads supporting rival teams help each other bond with their daughters.</p>
             <p class="video-description">Agency: WK Amsterdam<br>Director: The Mercadantes<br>Music: Bee Gees - "To Love Somebody"</p>
           </div>
         </div>
@@ -336,6 +348,7 @@
               </video>
             </div>
             <h3 class="video-title">Facebook Group: Nothing Better Than A Basset</h3>
+            <p class="video-story">Dog lovers from different walks of life come together over their love of basset hounds.</p>
             <p class="video-description">Agency: WK Portland<br>Music: Patsy Cline - "Back in Baby's Arms"</p>
           </div>
         </div>
@@ -351,6 +364,7 @@
               </video>
             </div>
             <h3 class="video-title">Facebook Group: Expats in Korea</h3>
+            <p class="video-story">Veteran expats help a newcomer make his new city feel like home.</p>
             <p class="video-description">Agency: WK Amsterdam</p>
           </div>
         </div>
@@ -366,6 +380,7 @@
               </video>
             </div>
             <h3 class="video-title">Facebook Group: Military Mama Network</h3>
+            <p class="video-story">Veteran families help a service member who can't make it home for the holidays.</p>
             <p class="video-description">Agency: WK Portland<br>Director: Frederik Bond</p>
           </div>
         </div>
@@ -381,6 +396,7 @@
               </video>
             </div>
             <h3 class="video-title">Facebook Group: I Love Memphis in May</h3>
+            <p class="video-story">People living all over the world keep their connection to their home town.</p>
             <p class="video-description">Agency: WK Portland<br>Director: Daniel Wolfe<br>Music: Marc Cohn - "Walking in Memphis"</p>
           </div>
         </div>
@@ -408,16 +424,23 @@
     <div class="campaign-section">
       <h2>There's a Facebook Group for Everyone</h2>
       <div class="overview">
-        <!-- Add your campaign overview text here -->
-        Brief description of the campaign, its goals, strategy, and impact.
+        <p>In the next chapter of the campaign, we expanded the types of groups we featured to make it clear that no matter your interest, there's a Facebook Group where you can find community. We brought the work to the biggest stage, the Super Bowl, adding a new layer to the narrative. The campaign didn't just celebrate connection. It made it real.</p>
       </div>
       <div class="campaign-media">
-        <div class="video-container">
-          <!-- Add video file when available -->
-          <video class="video-player" controls>
-            <source src="videos/placeholder.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <h3 class="media-header">Film</h3>
+        <div class="hero-video">
+          <div class="video-item">
+            <div class="video-container" data-video-src="videos/superbowl.mp4" onclick="playVideo(this)">
+              <img src="images/superbowl-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg'">
+              <div class="play-button"></div>
+              <video class="video-player" controls>
+                <source src="videos/superbowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h3 class="video-title">Super Bowl</h3>
+            <p class="video-description">Agency: WK Portland<br>Director: Megaforce<br>Music: Twisted Sister - "I wanna rock"</p>
+          </div>
         </div>
         <!-- Add images if needed -->
       </div>
@@ -429,8 +452,7 @@
     <div class="campaign-section">
       <h2>Take on anything with Facebook Groups</h2>
       <div class="overview">
-        <!-- Add your campaign overview text here -->
-        Brief description of the campaign, its goals, strategy, and impact.
+        <p>In the final chapter of the campaign, we set our sights on a younger audience—reintroducing Facebook Groups in a way that felt relevant to them. We focused on emerging interests and cultural signals resonating with Gen Z, and brought the work to life with a fresh visual style tailored to their world. The goal was simple: show a new generation that whatever they're into, there's a Facebook Group where they can find their people.</p>
       </div>
       <div class="campaign-media">
         <div class="video-container">
@@ -440,28 +462,43 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <!-- Add images if needed -->
+        
+        <h3 class="media-header" style="margin-top: 6em;">Out of Home</h3>
+        <!-- 3 Images - Full Width -->
+        <div class="full-width-image">
+          <img src="images/cats-ooh.jpg" alt="Cats OOH">
+        </div>
+        <div class="full-width-image">
+          <img src="images/dogs-ooh.jpg" alt="Dogs OOH">
+        </div>
+        <div class="full-width-image">
+          <img src="images/horses-ooh.jpg" alt="Horses OOH">
+        </div>
       </div>
     </div>
 
     <hr>
 
-    <!-- Campaign 4: Super Bowl -->
+    <!-- Campaign 4: International -->
     <div class="campaign-section">
-      <h2>Super Bowl</h2>
+      <h2>International</h2>
       <div class="overview">
-        <!-- Add your campaign overview text here -->
-        Brief description of the campaign, its goals, strategy, and impact.
+        <p>As the campaign gained momentum, we expanded into key global markets including Germany, Brazil, India, and the UK—adapting the work to reflect local culture while staying true to the core message of connection.</p>
       </div>
       <div class="campaign-media">
-        <div class="video-container">
-          <!-- Add video file when available -->
-          <video class="video-player" controls>
-            <source src="videos/placeholder.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <!-- Hero Image -->
+        <div class="full-width-image">
+          <img src="images/moms.jpeg" alt="Moms">
         </div>
-        <!-- Add images if needed -->
+        <!-- 2 Images -->
+        <div class="image-grid">
+          <div class="image-container">
+            <img src="images/hula.jpeg" alt="Hula">
+          </div>
+          <div class="image-container">
+            <img src="images/guitar.jpeg" alt="Guitar">
+          </div>
+        </div>
       </div>
     </div>
 
