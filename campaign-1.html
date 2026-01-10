@@ -104,6 +104,17 @@
       margin-bottom: 0;
     }
 
+    .campaign-section .overview h4 {
+      font-size: 1.1em;
+      color: #111;
+      margin: 1.5em 0 0.5em 0;
+      font-weight: bold;
+    }
+
+    .campaign-section .overview h4:first-child {
+      margin-top: 0;
+    }
+
     .campaign-media {
       margin: 2em 0;
     }
@@ -158,16 +169,22 @@
       margin-left: 4px;
     }
 
-    .campaign-media .video-container iframe {
+    .campaign-media .video-container video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       display: none;
+      object-fit: cover;
     }
 
-    .campaign-media .video-container.playing iframe {
+    .campaign-media .video-container.playing video {
+      display: block;
+    }
+
+    /* For video containers without thumbnails (placeholder videos) */
+    .campaign-media .video-container:not([data-video-src]) video {
       display: block;
     }
 
@@ -285,62 +302,90 @@
     <div class="campaign-section">
       <h2>Let's find more that brings us together</h2>
       <div class="overview">
-        <p>As Facebook weathered one of the most scrutinized chapters in its history, we built an integrated campaign that shifted the spotlight back to its original promise: bringing people closer. In a time of division, we told real stories of unlikely connections, everyday communities, and shared moments that couldn't happen anywhere else.</p>
-        <p>The campaign strategy threaded a very small needle—resonating in a hyper-political climate while staying true to the product's core value. That framework proved flexible and powerful, allowing us to scale the approach to key global markets including Brazil, Germany, India, and the UK.</p>
+        <h4>Overview</h4>
+        <p>As Facebook faced one of the most scrutinized moments in its history, we launched an integrated campaign to shift the narrative—reminding people of the platform's original promise: to bring people closer. In a time of division, we leaned into real stories of unlikely connections, everyday communities, and shared moments that couldn't happen anywhere else.</p>
+        <p>The campaign had to thread a narrow needle—resonating in a hyper-political climate while staying rooted in the product's core value. This strategic clarity gave us the flexibility to scale the approach globally, adapting the work for key markets including Brazil, Germany, India, and the UK.</p>
+        
+        <h4>Background</h4>
+        <p>Facebook was no longer the golden child. Public perception had shifted, and for the first time, the brand needed to actively define what it stood for—and reclaim its own story.</p>
+        
+        <h4>Challenge</h4>
+        <p>To talk about what brings us together, we had to acknowledge what pulls us apart. But on Facebook, those moments of friction often played out on the platform itself—making it both the message and the medium. That meant walking a fine line, with a narrow window of what we could credibly say.</p>
+        
+        <h4>Insight</h4>
+        <p>Focus on preferences, not polarizing worldviews. People can debate whether New York or deep dish is superior—but we can all agree that pizza brings us joy.</p>
+        
+        <h4>Tagline</h4>
+        <p>Let's find more that brings us together.</p>
       </div>
       <div class="campaign-media">
         <h3 class="media-header">Film</h3>
         <!-- Hero Video -->
         <div class="hero-video">
           <div class="video-item">
-            <div class="video-container" data-video-id="1UQcE9yDyYI" onclick="playVideo(this)">
-              <!-- Replace with your custom thumbnail image, or use YouTube thumbnail: https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg -->
+            <div class="video-container" data-video-src="videos/dads.mov" onclick="playVideo(this)">
               <img src="https://img.youtube.com/vi/1UQcE9yDyYI/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/1UQcE9yDyYI/hqdefault.jpg'">
               <div class="play-button"></div>
-              <iframe src="https://www.youtube.com/embed/1UQcE9yDyYI?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <video class="video-player" controls>
+                <source src="videos/dads.mov" type="video/quicktime">
+                <source src="videos/dads.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
             <h3 class="video-title">Facebook Group: Dads with Daughters</h3>
-            <p class="video-description">Video description goes here.</p>
+            <p class="video-description">Agency: WK Amsterdam<br>Director: The Mercadantes<br>Music: Bee Gees - "To Love Somebody"</p>
           </div>
         </div>
 
         <!-- 2x2 Grid of Videos -->
         <div class="video-grid">
           <div class="video-item">
-            <div class="video-container" data-video-id="lVtBsthaJ2I" onclick="playVideo(this)">
-              <img src="images/expat-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/lVtBsthaJ2I/hqdefault.jpg'">
+            <div class="video-container" data-video-src="videos/dogs.mp4" onclick="playVideo(this)">
+              <img src="images/dogs-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
               <div class="play-button"></div>
-              <iframe src="https://www.youtube.com/embed/lVtBsthaJ2I?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h3 class="video-title">Facebook Group: Expats in Korea</h3>
-            <p class="video-description">Video description goes here.</p>
-          </div>
-          <div class="video-item">
-            <div class="video-container" data-video-id="EEgGPBgdOAA" onclick="playVideo(this)">
-              <img src="images/military-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/EEgGPBgdOAA/hqdefault.jpg'">
-              <div class="play-button"></div>
-              <iframe src="https://www.youtube.com/embed/EEgGPBgdOAA?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h3 class="video-title">Facebook Group: Military Mama Network</h3>
-            <p class="video-description">Video description goes here.</p>
-          </div>
-          <div class="video-item">
-            <div class="video-container" data-video-id="vC-1sm9mG1A" onclick="playVideo(this)">
-              <img src="images/dogs-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/vC-1sm9mG1A/hqdefault.jpg'">
-              <div class="play-button"></div>
-              <iframe src="https://www.youtube.com/embed/vC-1sm9mG1A?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <video class="video-player" controls>
+                <source src="videos/dogs.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
             <h3 class="video-title">Facebook Group: Nothing Better Than A Basset</h3>
-            <p class="video-description">Video description goes here.</p>
+            <p class="video-description">Agency: WK Portland<br>Music: Patsy Cline - "Back in Baby's Arms"</p>
           </div>
           <div class="video-item">
-            <div class="video-container" data-video-id="VIDEO_4_ID" onclick="playVideo(this)">
-              <img src="images/memphis-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/VIDEO_4_ID/hqdefault.jpg'">
+            <div class="video-container" data-video-src="videos/expat.mp4" onclick="playVideo(this)">
+              <img src="images/expat-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
               <div class="play-button"></div>
-              <iframe src="https://www.youtube.com/embed/VIDEO_4_ID?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <video class="video-player" controls>
+                <source src="videos/expat.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h3 class="video-title">Facebook Group: Expats in Korea</h3>
+            <p class="video-description">Agency: WK Amsterdam</p>
+          </div>
+          <div class="video-item">
+            <div class="video-container" data-video-src="videos/military.mp4" onclick="playVideo(this)">
+              <img src="images/military-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <div class="play-button"></div>
+              <video class="video-player" controls>
+                <source src="videos/military.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h3 class="video-title">Facebook Group: Military Mama Network</h3>
+            <p class="video-description">Agency: WK Portland<br>Director: Frederik Bond</p>
+          </div>
+          <div class="video-item">
+            <div class="video-container" data-video-src="videos/memphis.mp4" onclick="playVideo(this)">
+              <img src="images/memphis-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <div class="play-button"></div>
+              <video class="video-player" controls>
+                <source src="videos/memphis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
             <h3 class="video-title">Facebook Group: I Love Memphis in May</h3>
-            <p class="video-description">Video description goes here.</p>
+            <p class="video-description">Agency: WK Portland<br>Director: Daniel Wolfe<br>Music: Marc Cohn - "Walking in Memphis"</p>
           </div>
         </div>
 
@@ -372,8 +417,11 @@
       </div>
       <div class="campaign-media">
         <div class="video-container">
-          <!-- Replace VIDEO_ID with your YouTube video ID -->
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- Add video file when available -->
+          <video class="video-player" controls>
+            <source src="videos/placeholder.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <!-- Add images if needed -->
       </div>
@@ -390,8 +438,11 @@
       </div>
       <div class="campaign-media">
         <div class="video-container">
-          <!-- Replace VIDEO_ID with your YouTube video ID -->
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- Add video file when available -->
+          <video class="video-player" controls>
+            <source src="videos/placeholder.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <!-- Add images if needed -->
       </div>
@@ -408,8 +459,11 @@
       </div>
       <div class="campaign-media">
         <div class="video-container">
-          <!-- Replace VIDEO_ID with your YouTube video ID -->
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- Add video file when available -->
+          <video class="video-player" controls>
+            <source src="videos/placeholder.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <!-- Add images if needed -->
       </div>
@@ -419,13 +473,12 @@
 
   <script>
     function playVideo(container) {
-      const videoId = container.getAttribute('data-video-id');
-      if (videoId && videoId !== 'VIDEO_4_ID') {
+      const videoSrc = container.getAttribute('data-video-src');
+      if (videoSrc) {
         container.classList.add('playing');
-        // Update iframe src to ensure autoplay works
-        const iframe = container.querySelector('iframe');
-        if (iframe) {
-          iframe.src = `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0&autoplay=1`;
+        const video = container.querySelector('video');
+        if (video) {
+          video.play();
         }
       }
     }
