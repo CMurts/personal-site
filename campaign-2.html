@@ -220,6 +220,12 @@
       </div>
     </div>
 
+    <hr>
+
+    <div class="back-link" style="margin-top: 4em; text-align: left;">
+      <a href="portfolio.html">← Back to Select Work</a>
+    </div>
+
   </div>
 
   <script>
@@ -233,6 +239,26 @@
         }
       }
     }
+
+    // Pause videos when they scroll out of view
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('video');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            // Video is out of view, pause it
+            entry.target.pause();
+          }
+        });
+      }, {
+        threshold: 0.1 // Trigger when less than 10% visible
+      });
+
+      videos.forEach(video => {
+        observer.observe(video);
+      });
+    });
   </script>
 </body>
 </html>

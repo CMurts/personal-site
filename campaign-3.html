@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Key - Expedia Group - Colin Murtagh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Courier Prime', monospace;
+      background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 2em;
+      animation: fadeIn 1s ease-in;
+      min-height: 100vh;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      margin-bottom: 2em;
+      display: inline-block;
+    }
+
+    .back-link a {
+      color: #888;
+      text-decoration: underline;
+      font-size: 1em;
+    }
+
+    .back-link a:hover {
+      color: #555;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 0.2em;
+      color: #111;
+    }
+
+    .campaign-header {
+      margin-bottom: 3em;
+    }
+
+    .campaign-header .company {
+      font-size: 0.9em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 0.3em;
+    }
+
+    .campaign-header .product {
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 0.5em;
+    }
+
+    hr {
+      width: 50px;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2em 0 1em 0;
+    }
+
+    .campaign-section {
+      margin-bottom: 4em;
+    }
+
+    .campaign-section h2 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      color: #111;
+    }
+
+    .campaign-section .overview {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 1.5em;
+      max-width: 800px;
+    }
+
+    .campaign-section .overview p {
+      margin: 0 0 1em 0;
+    }
+
+    .campaign-media {
+      margin: 2em 0;
+    }
+
+    .campaign-media .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 1em;
+      cursor: pointer;
+      background: #000;
+    }
+
+    .campaign-media .video-container .video-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .campaign-media .video-container .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 48px;
+      background: rgba(23, 35, 34, 0.9);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 1;
+    }
+
+    .campaign-media .video-container:hover .play-button {
+      background: rgba(255, 0, 0, 0.9);
+    }
+
+    .campaign-media .video-container .play-button::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 20px solid #fff;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .campaign-media .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+    }
+
+    .campaign-media .video-container.playing video {
+      display: block;
+    }
+
+    .campaign-media .video-container.playing .video-thumbnail,
+    .campaign-media .video-container.playing .play-button {
+      display: none;
+    }
+
+    .campaign-media .hero-video {
+      margin-bottom: 2em;
+    }
+
+    .campaign-media .video-item {
+      margin-bottom: 2em;
+    }
+
+    .campaign-media .media-header {
+      font-size: 1.2em;
+      color: #111;
+      margin-bottom: 1em;
+      margin-top: 2em;
+      font-weight: normal;
+    }
+
+    .campaign-media .media-header:first-of-type {
+      margin-top: 0;
+    }
+
+    .campaign-media .full-width-image {
+      width: 100%;
+      margin-bottom: 2em;
+    }
+
+    .campaign-media .full-width-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .campaign-media .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5em;
+      margin-top: 2em;
+    }
+
+    .campaign-media .image-container {
+      width: 100%;
+      margin: 0;
+    }
+
+    .campaign-media .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .campaign-media .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+      h1 {
+        font-size: 3em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="portfolio.html">← Back to Select Work</a>
+    </div>
+
+    <div class="campaign-header">
+      <div class="company">Expedia Group</div>
+      <div class="product">Expedia, Hotels.com, Vrbo</div>
+      <h1>One Key</h1>
+    </div>
+
+    <hr>
+
+    <div class="campaign-section">
+      <h2>One Key</h2>
+      <div class="overview">
+        <p>To introduce One Key, Expedia Group's first unified loyalty program across Expedia, Hotels.com, and Vrbo, we set out to capture the thrill of travel in a way that felt fresh and universal. Partnering with Wieden+Kennedy, we brought the story to life through the eyes of an unlikely hero—luggage.</p>
+        <p>Directed by Kim Gehrig, the launch film tapped into the anticipation, emotion, and movement that defines every journey. The campaign rolled out as a fully integrated effort, supported by a new design system developed in collaboration with Wolff Olins that visually united the brands under a single, cohesive identity.</p>
+      </div>
+      <div class="campaign-media">
+        <div class="hero-video">
+          <div class="video-item">
+            <div class="video-container" data-video-src="videos/onekey.mp4" onclick="playVideo(this)">
+              <img src="images/one-key-hero.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <div class="play-button"></div>
+              <video class="video-player" controls>
+                <source src="videos/onekey.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="media-header" style="margin-top: 4em;">Out of Home</h3>
+        <!-- 4 OOH Images - Full Width -->
+        <div class="full-width-image">
+          <img src="images/onekey-ooh-1.jpg" alt="One Key OOH 1">
+        </div>
+        <div class="full-width-image">
+          <img src="images/onekey-ooh-2.jpg" alt="One Key OOH 2">
+        </div>
+        <div class="full-width-image">
+          <img src="images/onekey-ooh-3.jpg" alt="One Key OOH 3">
+        </div>
+        <div class="full-width-image">
+          <img src="images/onekey-ooh-4.jpg" alt="One Key OOH 4">
+        </div>
+        
+        <!-- Banners at Bottom -->
+        <div class="full-width-image" style="margin-top: 2em;">
+          <img src="images/onekey-banners.jpg" alt="One Key Banners">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="back-link" style="margin-top: 4em; text-align: left;">
+      <a href="portfolio.html">← Back to Select Work</a>
+    </div>
+
+  </div>
+
+  <script>
+    function playVideo(container) {
+      const videoSrc = container.getAttribute('data-video-src');
+      if (videoSrc) {
+        container.classList.add('playing');
+        const video = container.querySelector('video');
+        if (video) {
+          video.play();
+        }
+      }
+    }
+
+    // Pause videos when they scroll out of view
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('video');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            // Video is out of view, pause it
+            entry.target.pause();
+          }
+        });
+      }, {
+        threshold: 0.1 // Trigger when less than 10% visible
+      });
+
+      videos.forEach(video => {
+        observer.observe(video);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -359,9 +359,13 @@
     <hr>
 
     <!-- Campaign Overview -->
-    <div class="overview" style="max-width: 800px; margin-bottom: 3em;">
-      <p>As Facebook faced one of the most scrutinized moments in its history, we launched an integrated campaign to shift the narrative — reminding people of the platform's original promise: to bring people closer. In a time of division, we leaned into real stories of unlikely connections, everyday communities, and shared moments that couldn't happen anywhere else.</p>
+    <div class="campaign-section">
+      <div class="overview">
+        <p>As Facebook faced one of the most scrutinized moments in its history, we launched an integrated campaign to shift the narrative — reminding people of the platform's original promise: to bring people closer. In a time of division, we leaned into real stories of unlikely connections, everyday communities, and shared moments that couldn't happen anywhere else.</p>
+      </div>
     </div>
+
+    <h2 style="font-size: 1.5em; margin: 2em 0 1em 0; color: #111;">Campaigns</h2>
 
     <!-- Campaign Navigation -->
     <div class="campaign-nav-grid">
@@ -624,6 +628,12 @@
       </div>
     </div>
 
+    <hr>
+
+    <div class="back-link" style="margin-top: 4em; text-align: left;">
+      <a href="portfolio.html">← Back to Select Work</a>
+    </div>
+
   </div>
 
   <script>
@@ -637,6 +647,38 @@
         }
       }
     }
+
+    // Pause videos when they scroll out of view, but handle autoplay videos differently
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('video');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          const isAutoplay = video.hasAttribute('autoplay');
+          
+          if (entry.isIntersecting) {
+            // Video is in view
+            if (isAutoplay && video.paused) {
+              // Autoplay video should play when scrolled into view
+              video.play().catch(e => console.log('Autoplay prevented:', e));
+            }
+          } else {
+            // Video is out of view
+            if (!isAutoplay) {
+              // Only pause non-autoplay videos
+              video.pause();
+            }
+          }
+        });
+      }, {
+        threshold: 0.1 // Trigger when less than 10% visible
+      });
+
+      videos.forEach(video => {
+        observer.observe(video);
+      });
+    });
   </script>
 </body>
 </html>
