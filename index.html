@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colin Murtagh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"></noscript>
   <style>
     body {
       font-family: 'Courier Prime', monospace;
@@ -175,7 +176,7 @@
     </div>
     <div class="image-container">
       <!-- Add your image: Save as images/image.jpg -->
-      <img src="images/image.jpg" alt="Image" id="main-image">
+      <img src="images/image.jpg" alt="Image" id="main-image" loading="eager" fetchpriority="high" decoding="async">
     </div>
   </div>
 

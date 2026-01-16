@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>One Key - Expedia Group - Colin Murtagh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"></noscript>
   <style>
     html {
       scroll-behavior: smooth;
@@ -254,9 +255,9 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/onekey.mp4" onclick="playVideo(this)">
-              <img src="images/one-key-hero.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/one-key-hero.jpg" alt="Video thumbnail" class="video-thumbnail" loading="eager" fetchpriority="high" decoding="async">
               <div class="play-button"></div>
-              <video class="video-player" controls>
+              <video class="video-player" controls preload="none">
                 <source src="videos/onekey.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -269,9 +270,9 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/onekey-worktrip.mp4" onclick="playVideo(this)">
-              <img src="images/onekey-worktrip.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/onekey-worktrip.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
-              <video class="video-player" controls>
+              <video class="video-player" controls preload="none">
                 <source src="videos/onekey-worktrip.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -283,9 +284,9 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/onekey-paris.mp4" onclick="playVideo(this)">
-              <img src="images/onekey-paris.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/onekey-paris.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
-              <video class="video-player" controls>
+              <video class="video-player" controls preload="none">
                 <source src="videos/onekey-paris.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -296,21 +297,21 @@
         <h3 class="media-header" style="margin-top: 4em;">Out of Home</h3>
         <!-- 4 OOH Images - Full Width -->
         <div class="full-width-image">
-          <img src="images/onekey-ooh-1.jpg" alt="One Key OOH 1">
+          <img src="images/onekey-ooh-1.jpg" alt="One Key OOH 1" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/onekey-ooh-2.jpg" alt="One Key OOH 2">
+          <img src="images/onekey-ooh-2.jpg" alt="One Key OOH 2" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/onekey-ooh-3.jpg" alt="One Key OOH 3">
+          <img src="images/onekey-ooh-3.jpg" alt="One Key OOH 3" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/onekey-ooh-4.jpg" alt="One Key OOH 4">
+          <img src="images/onekey-ooh-4.jpg" alt="One Key OOH 4" loading="lazy" decoding="async">
         </div>
         
         <!-- Banners at Bottom -->
         <div class="full-width-image" style="margin-top: 2em;">
-          <img src="images/onekey-banners.jpg" alt="One Key Banners">
+          <img src="images/onekey-banners.jpg" alt="One Key Banners" loading="lazy" decoding="async">
         </div>
       </div>
     </div>

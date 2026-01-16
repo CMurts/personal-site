@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hopes - Facebook App - Colin Murtagh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"></noscript>
   <style>
     html {
       scroll-behavior: smooth;
@@ -208,9 +209,9 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/hopes.mp4" onclick="playVideo(this)">
-              <img src="images/facebook-brand-hero.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/facebook-brand-hero.jpg" alt="Video thumbnail" class="video-thumbnail" loading="eager" fetchpriority="high" decoding="async">
               <div class="play-button"></div>
-              <video class="video-player" controls>
+              <video class="video-player" controls preload="none">
                 <source src="videos/hopes.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>

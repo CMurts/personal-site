@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>More Together - Facebook App - Colin Murtagh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"></noscript>
   <style>
     html {
       scroll-behavior: smooth;
@@ -370,19 +371,19 @@
     <!-- Campaign Navigation -->
     <div class="campaign-nav-grid">
       <a href="#lets-find-more" class="campaign-nav-item">
-        <img src="images/lets-find-more-nav.jpg" alt="Let's find more that brings us together">
+        <img src="images/lets-find-more-nav.jpg" alt="Let's find more that brings us together" loading="lazy" decoding="async">
         <div class="nav-overlay">
           <h3 class="nav-title">Let's find more that brings us together</h3>
         </div>
       </a>
       <a href="#facebook-group-everyone" class="campaign-nav-item">
-        <img src="images/facebook-group-everyone-nav.jpg" alt="There's a Facebook Group for Everyone">
+        <img src="images/facebook-group-everyone-nav.jpg" alt="There's a Facebook Group for Everyone" loading="lazy" decoding="async">
         <div class="nav-overlay">
           <h3 class="nav-title">There's a Facebook Group for Everyone</h3>
         </div>
       </a>
       <a href="#take-on-anything" class="campaign-nav-item">
-        <img src="images/take-on-anything-nav.jpg" alt="Take on anything with Facebook Groups">
+        <img src="images/take-on-anything-nav.jpg" alt="Take on anything with Facebook Groups" loading="lazy" decoding="async">
         <div class="nav-overlay">
           <h3 class="nav-title">Take on anything with Facebook Groups</h3>
         </div>
@@ -411,9 +412,9 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/dads.mov" onclick="playVideo(this)">
-              <img src="https://img.youtube.com/vi/1UQcE9yDyYI/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/1UQcE9yDyYI/hqdefault.jpg'">
+              <img src="https://img.youtube.com/vi/1UQcE9yDyYI/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail" loading="eager" fetchpriority="high" decoding="async" onerror="this.src='https://img.youtube.com/vi/1UQcE9yDyYI/hqdefault.jpg'">
               <div class="play-button"></div>
-              <video class="video-player" controls>
+              <video class="video-player" controls preload="none">
                 <source src="videos/dads.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -427,7 +428,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/dogs.mp4" onclick="playVideo(this)">
-              <img src="images/dogs-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/dogs-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/dogs.mp4" type="video/mp4">
@@ -442,7 +443,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/expat.mp4" onclick="playVideo(this)">
-              <img src="images/expat-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/expat-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/expat.mp4" type="video/mp4">
@@ -457,7 +458,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/military.mp4" onclick="playVideo(this)">
-              <img src="images/military-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/military-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/military.mp4" type="video/mp4">
@@ -472,7 +473,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/memphis.mp4" onclick="playVideo(this)">
-              <img src="images/memphis-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/memphis-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/memphis.mp4" type="video/mp4">
@@ -487,15 +488,15 @@
         <h3 class="media-header">Out of Home</h3>
         <!-- Full Width Image -->
         <div class="full-width-image">
-          <img src="images/facebook-groups-hero.jpg" alt="Facebook Groups Hero">
+          <img src="images/facebook-groups-hero.jpg" alt="Facebook Groups Hero" loading="lazy" decoding="async">
         </div>
         <!-- 2 Images -->
         <div class="image-grid">
           <div class="image-container">
-            <img src="images/lets-find-more-image-1.jpg" alt="Campaign image 1">
+            <img src="images/lets-find-more-image-1.jpg" alt="Campaign image 1" loading="lazy" decoding="async">
           </div>
           <div class="image-container">
-            <img src="images/lets-find-more-image-2.jpg" alt="Campaign image 2">
+            <img src="images/lets-find-more-image-2.jpg" alt="Campaign image 2" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -514,7 +515,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/superbowl.mp4" onclick="playVideo(this)">
-              <img src="images/superbowl-image.jpg" alt="Video thumbnail" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg'">
+              <img src="images/superbowl-image.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async" onerror="this.src='https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg'">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/superbowl.mp4" type="video/mp4">
@@ -528,7 +529,7 @@
         
         <!-- Autoplay OOH Video -->
         <div class="hero-video" style="margin-top: 2em;">
-          <video class="video-player" autoplay muted loop playsinline style="width: 100%; display: block;">
+          <video class="video-player" autoplay muted loop playsinline preload="metadata" style="width: 100%; display: block;">
             <source src="videos/superbowl-ooh.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -537,13 +538,13 @@
         <h3 class="media-header" style="margin-top: 4em;">Out of Home</h3>
         <!-- 3 Images - Full Width -->
         <div class="full-width-image">
-          <img src="images/cats-ooh.jpg" alt="Cats OOH">
+          <img src="images/cats-ooh.jpg" alt="Cats OOH" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/dogs-ooh.jpg" alt="Dogs OOH">
+          <img src="images/dogs-ooh.jpg" alt="Dogs OOH" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/horses-ooh.jpg" alt="Horses OOH">
+          <img src="images/horses-ooh.jpg" alt="Horses OOH" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -562,7 +563,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/video-1.mp4" onclick="playVideo(this)">
-              <img src="images/video1-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/video1-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/video-1.mp4" type="video/mp4">
@@ -578,7 +579,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/video-2.mp4" onclick="playVideo(this)">
-              <img src="images/video2-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+              <img src="images/video2-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls>
                 <source src="videos/video-2.mp4" type="video/mp4">
@@ -603,27 +604,27 @@
       <div class="campaign-media">
         <!-- Hero Image -->
         <div class="full-width-image">
-          <img src="images/moms.jpeg" alt="Moms">
+          <img src="images/moms.jpeg" alt="Moms" loading="lazy" decoding="async">
         </div>
         <!-- 2 Images -->
         <div class="image-grid">
           <div class="image-container">
-            <img src="images/hula.jpeg" alt="Hula">
+            <img src="images/hula.jpeg" alt="Hula" loading="lazy" decoding="async">
           </div>
           <div class="image-container">
-            <img src="images/guitar.jpeg" alt="Guitar">
+            <img src="images/guitar.jpeg" alt="Guitar" loading="lazy" decoding="async">
           </div>
         </div>
         
         <!-- 3 OOH Images - Full Width -->
         <div class="full-width-image" style="margin-top: 4em;">
-          <img src="images/brasildads-ooh.jpg" alt="Brazil Dads OOH">
+          <img src="images/brasildads-ooh.jpg" alt="Brazil Dads OOH" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/slack-ooh.jpg" alt="Slack OOH">
+          <img src="images/slack-ooh.jpg" alt="Slack OOH" loading="lazy" decoding="async">
         </div>
         <div class="full-width-image">
-          <img src="images/swimming-ooh.jpg" alt="Swimming OOH">
+          <img src="images/swimming-ooh.jpg" alt="Swimming OOH" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
