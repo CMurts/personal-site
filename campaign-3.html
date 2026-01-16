@@ -104,6 +104,7 @@
 
     .campaign-media .video-container {
       position: relative;
+      width: 100%;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
       overflow: hidden;
@@ -135,7 +136,9 @@
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
-      z-index: 1;
+      z-index: 2;
+      pointer-events: auto;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .campaign-media .video-container:hover .play-button {
@@ -173,10 +176,12 @@
 
     .campaign-media .hero-video {
       margin-bottom: 2em;
+      width: 100%;
     }
 
     .campaign-media .video-item {
       margin-bottom: 2em;
+      width: 100%;
     }
 
     .campaign-media .media-header {
@@ -225,20 +230,42 @@
         padding: 1em;
       }
       
+      .campaign-media {
+        width: 100%;
+        margin: 1.5em 0;
+      }
+      
       .campaign-media .image-grid {
         grid-template-columns: 1fr;
       }
       
       .campaign-media .hero-video {
         margin-bottom: 1.5em;
+        width: 100%;
+        display: block;
+      }
+      
+      .campaign-media .video-item {
+        width: 100%;
+        display: block;
       }
       
       .campaign-media .video-container {
+        width: 100%;
         margin-bottom: 0.5em;
+        display: block;
+      }
+      
+      .campaign-media .video-container .video-thumbnail {
+        width: 100%;
+        height: 100%;
+        display: block;
       }
       
       .campaign-media .full-width-image {
         margin-bottom: 1.5em;
+        width: 100%;
+        display: block;
       }
       
       h1 {
@@ -286,7 +313,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/onekey-worktrip.mp4" onclick="playVideo(this)">
-              <img src="images/onekey-worktrip.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
+              <img src="images/onekey-worktrip.jpg" alt="Video thumbnail" class="video-thumbnail" loading="eager" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls preload="none">
                 <source src="videos/onekey-worktrip.mp4" type="video/mp4">
@@ -300,7 +327,7 @@
         <div class="hero-video">
           <div class="video-item">
             <div class="video-container" data-video-src="videos/onekey-paris.mp4" onclick="playVideo(this)">
-              <img src="images/onekey-paris.jpg" alt="Video thumbnail" class="video-thumbnail" loading="lazy" decoding="async">
+              <img src="images/onekey-paris.jpg" alt="Video thumbnail" class="video-thumbnail" loading="eager" decoding="async">
               <div class="play-button"></div>
               <video class="video-player" controls preload="none">
                 <source src="videos/onekey-paris.mp4" type="video/mp4">
@@ -347,10 +374,13 @@
         container.classList.add('playing');
         const video = container.querySelector('video');
         if (video) {
-          video.play();
+          video.play().catch(function(error) {
+            console.log('Video play error:', error);
+          });
         }
       }
     }
+    
 
     // Pause videos when they scroll out of view
     document.addEventListener('DOMContentLoaded', function() {
